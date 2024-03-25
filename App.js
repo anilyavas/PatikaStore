@@ -7,16 +7,15 @@ import {
   View,
   TextInput,
 } from 'react-native';
-import dummy from './assets/data/dummy';
 import ShopListItem from './components/ShopListItem';
+import dummy from './assets/data/dummy';
+import SearchBar from './components/SearchBar';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>PATIKASTORE</Text>
-      <View style={styles.inputContainer}>
-        <TextInput placeholder='Ara...' style={styles.input} />
-      </View>
+      <SearchBar />
       <FlatList
         numColumns={2}
         data={dummy}
@@ -35,19 +34,6 @@ const styles = StyleSheet.create({
     color: 'purple',
     fontWeight: 'bold',
     fontSize: 30,
-    padding: 20,
-  },
-  inputContainer: {
-    backgroundColor: 'gainsboro',
-    borderRadius: 30,
-    height: 40,
-    width: '95%',
-    justifyContent: 'center',
-    alignSelf: 'center',
-  },
-  input: {
-    color: 'grey',
-    fontSize: 16,
     padding: 20,
   },
 });
